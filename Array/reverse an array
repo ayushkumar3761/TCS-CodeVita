@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+void reverse(int arr[],int n){
+    for(int i=n-1;i>=0;i--){
+        cout<<arr[i]<<" ";
+    }
+    return;
+}
+int main(){
+    int n1;
+    cin>>n1;
+    cout<<"enter the elemnt of the arry:"<<endl;
+    int arr1[n1];
+    for(int i=0;i<n1;i++){
+        cin>>arr1[i];
+    }
+    reverse(arr1,n1);
+}
