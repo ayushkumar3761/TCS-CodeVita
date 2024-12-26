@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+void rotate(vector<int>&arr,int k){
+    int n=arr.size();
+    vector<int>ans(n);
+    for(int i=0;i<n;i++){
+        ans[(i+k)%n]=arr[i];
+    }
+    arr=ans;
+}
+int main(){
+    int n1;
+    cout<<"enter the size of an array:"<<endl;
+    cin>>n1;
+    int k1;
+    cin>>k1;
+    vector<int>arr1(n1);
+    for(int i=0;i<n1;i++){
+        cin>>arr1[i];
+    }
+    rotate(arr1,k1);
+    for(int i=0;i<n1;i++){
+        cout<<arr1[i];
+    }
+}
