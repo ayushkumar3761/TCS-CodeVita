@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+using namespace std;
+void duplicate(int arr[],int n){
+    int i=0;
+    for(int j=1;j<n;j++){
+        if(arr[i]!=arr[j]){
+            i++;
+            arr[i]=arr[j];
+        }
+    }
+    for(int k=0;k<i+1;k++){
+        cout<<arr[k];
+    }
+    
+}
+int main(){
+    int n1;
+    cin>>n1;
+    int arr1[n1];
+    cout<<"enter the element of the array:"<<endl;
+    for(int i=0;i<n1;i++){
+        cin>>arr1[i];
+    }
+    duplicate(arr1,n1);
+}
+using set
+#include<bits/stdc++.h>
+using namespace std;
+void duplicate(int arr[],int n){
+    set<int> set;
+    for(int i=0;i<n;i++){
+        set.insert(arr[i]);
+    }
+    int size=set.size();
+    int j=0;
+    for(int k:set){
+        arr[j]=k;
+        j++;
+    }
+    for(int i=0;i<size;i++){
+        cout<<arr[i];
+    }
+    
+    
+}
+int main(){
+    int n1;
+    cin>>n1;
+    int arr1[n1];
+    cout<<"enter the element of the array:"<<endl;
+    for(int i=0;i<n1;i++){
+        cin>>arr1[i];
+    }
+    duplicate(arr1,n1);
+}
