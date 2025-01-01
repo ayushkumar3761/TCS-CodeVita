@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+void twosolve(int arr[],int n){
+    map<int,int>mp;
+    int m[n];
+    int temp=1;
+    for(int i=0;i<n;i++){
+        m[i]=arr[i];
+    }
+    sort(m,m+n);
+    for(int i=0;i<n;i++){
+       if(mp[m[i]]==0){
+           mp[m[i]]=temp;
+           temp++;
+       }
+    }
+    for(int i=0;i<n;i++){
+        cout<<mp[arr[i]]<<" ";
+    }
+}
+int main(){
+    int n1;
+    cin>>n1;
+    int arr1[n1];
+    for(int i=0;i<n1;i++){
+        cin>>arr1[i];
+    }
+    twosolve(arr1,n1);
+}
