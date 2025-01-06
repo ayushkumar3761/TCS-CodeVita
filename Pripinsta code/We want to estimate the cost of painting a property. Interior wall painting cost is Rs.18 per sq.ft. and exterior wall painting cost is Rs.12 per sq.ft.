@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+void subset(float arr[],float arr1[],int n, int n1){
+    float sum=0.0;
+    float sum1=0.0;
+    for(int i=0;i<n;i++){
+        sum+=arr[i];
+    }
+    float cost=sum*18;
+    for(int i=0;i<n1;i++){
+        sum1+=arr1[i];
+    }
+    float cost1=sum1*12;
+    float res=cost+cost1;
+    cout<<"Total estimated cost:"<<res;
+    
+}
+int main(){
+    int n;
+    int n1;
+    cin>>n>>n1;
+    if(n<0 ||n1<0){
+        cout<<"Invalid Input";
+    }
+    else if(n==0 ||n1==0){
+        cout<<"Total estimated cost:0.0";
+    }
+    else{
+    float arr[n];
+    float arr1[n1];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    for(int i=0;i<n1;i++){
+        cin>>arr1[i];
+    }
+    subset(arr,arr1,n,n1);
+    }
+}
