@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+void subset(int n,int k,int j,int m,int p){
+    int beat;int peat;
+    if(n<0||k<0||j<0||m<0||p<0){
+        cout<<"Invalid Input";
+    }
+    else{
+        if(k>0){
+            beat=m/k;
+            m=m%k;
+        }
+        if(j>0){
+            peat=p/j;
+            p=p%j;
+        }
+        n=n-beat-peat;
+        if(m!=0 || p!=0){
+            n=n-1;
+        }
+        cout<<n;
+    }
+}
+int main(){
+    int schmeamount=5000;
+    string pname;
+    cin>>pname;
+    char ch;
+    cin>>ch;
+    if(ch=='Y'){
+        int n;
+        cin>>n;
+        string arr[n];
+        for(int i=0;i<n;i++){
+            cin>>arr[i];
+        }
+        cout<<"Total members:"<<n+1<<endl;
+        cout<<pname<<":"<<n*500<<"INR"<<endl;
+        for(int i=0;i<n;i++){
+            cout<<arr[i]<<":"<<250<<"INR"<<endl;
+        }
+        
+    }
+    else if(ch=='N'){
+        cout<<"Number of member is :1"<<endl;
+        cout<<"commession:250.0 INR"<<endl;
+    }
+    
+}
