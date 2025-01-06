@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+void subset(string s,string d){
+    int st;int ed;
+    float sum=0;
+    float path[8]={800, 600, 750, 900, 1400, 1200, 1100, 1500};
+    string BusStops[8]={"TH", "GA", "IC", "HA", "TE", "LU", "NI","CA"};
+    for(int i=0;i<8;i++){
+        if(s==BusStops[i]){
+            st=i;
+        }
+        if(d==BusStops[i]){
+            ed=i;
+        }
+    }
+    if(s==d){
+        cout<<"Invalid Input";
+    }
+    else{
+        for(int i=st+1;i!=ed+1;){
+            sum+=path[i];
+            i=(i+1)%8;
+        }
+        cout<<(ceil)(sum*0.005);
+    }
+}
+int main(){
+    
+    string s;
+    cin>>s;
+    string d;
+    cin>>d;
+    transform(s.begin(),s.end(),s.begin(),::toupper);
+    transform(d.begin(),d.end(),d.begin(),::toupper);
+    subset(s,d);
+}
