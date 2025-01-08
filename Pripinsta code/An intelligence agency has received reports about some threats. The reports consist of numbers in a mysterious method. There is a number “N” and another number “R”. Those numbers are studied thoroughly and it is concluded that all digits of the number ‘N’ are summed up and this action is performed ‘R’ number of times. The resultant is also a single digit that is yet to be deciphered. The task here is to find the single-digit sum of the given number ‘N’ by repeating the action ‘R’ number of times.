@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+int fact(int n){
+    int sum=0;
+    while(n>0){
+        int temp=n%10;
+        sum+=temp;
+        n=n/10;
+    }
+    return sum;
+}
+int main(){
+    int n;
+    cin>>n;
+    int r;
+    cin>>r;
+    int c=fact(n);
+    int pro=c*r;
+    int d=fact(pro);
+    cout<<d;
+}
