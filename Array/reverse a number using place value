@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void findindex(int n,int m){
+    int sum=0;
+    int placev=1;
+    while(n>0){
+        int temp=n%10;
+        int d=(temp+m)%10;
+        sum=sum+d*placev;
+        n=n/10;
+        placev*=10;
+    }
+    cout<<sum;
+}    
+
+int main(){
+    int n;
+    cin>>n;
+    int m;
+    cin>>m;
+    findindex(n,m);
+}
